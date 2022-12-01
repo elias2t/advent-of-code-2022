@@ -1,0 +1,26 @@
+
+# java build
+target/
+bin/
+
+# eclipse settings
+.settings/
+.classpath
+.project
+.metadata/
+.recommenders/
+
+# IntelliJ seetings
+.idea/
+*.iml
+
+# javascript libs
+node/
+node_modules/
+
+# files Mac
+**/.DS_Store
+
+# bin files
+**/bin
+

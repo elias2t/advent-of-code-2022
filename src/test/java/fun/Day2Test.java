@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Map;
 
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -14,6 +16,7 @@ import fun.utils.FileUtils;
 
 @ExtendWith( SpringExtension.class )
 @SpringBootTest( classes = Application.class )
+@TestMethodOrder( MethodOrderer.MethodName.class )
 public class Day2Test {
 
   private static final String FILE = "day2.txt";
@@ -59,7 +62,7 @@ public class Day2Test {
     }
 
     CP.print(
-        "Total score if everything goes exactly according to strategy guide",
+        "Day2, part1, total score if everything goes exactly according to strategy guide",
         Map.of( "Score", score ) );
 
   }
@@ -105,7 +108,7 @@ public class Day2Test {
     }
 
     CP.print(
-        "Total score if everything goes exactly according to strategy guide",
+        "Day2, part2, total score if everything goes exactly according to strategy guide",
         Map.of( "Score", score ) );
 
   }

@@ -7,7 +7,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -17,6 +19,7 @@ import fun.utils.FileUtils;
 
 @ExtendWith( SpringExtension.class )
 @SpringBootTest( classes = Application.class )
+@TestMethodOrder( MethodOrderer.MethodName.class )
 public class Day1Test {
 
   private static final String FILE = "day1.txt";
@@ -49,7 +52,9 @@ public class Day1Test {
 
     }
 
-    CP.print( "Elf carrying the most Calories", Map.of( "Elf number", elf, "Calories", max ) );
+    CP.print(
+        "Day1, part1, Elf carrying the most Calories",
+        Map.of( "Elf number", elf, "Calories", max ) );
 
   }
 
@@ -78,7 +83,7 @@ public class Day1Test {
     Collections.sort( list, Collections.reverseOrder() );
 
     CP.print(
-        "Three Elves carrying the most Calories",
+        "Day1, part2, three Elves carrying the most Calories",
         Map.of( "Calories", list.get( 0 ) + list.get( 1 ) + list.get( 2 ) ) );
 
   }

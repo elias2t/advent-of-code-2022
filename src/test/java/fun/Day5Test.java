@@ -2,8 +2,9 @@ package fun;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.Map;
-import java.util.Stack;
 
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
@@ -22,15 +23,17 @@ public class Day5Test {
 
   private static final String FILE = "day5.txt";
 
-  Stack<Character> stack1 = new Stack<>();
-  Stack<Character> stack2 = new Stack<>();
-  Stack<Character> stack3 = new Stack<>();
-  Stack<Character> stack4 = new Stack<>();
-  Stack<Character> stack5 = new Stack<>();
-  Stack<Character> stack6 = new Stack<>();
-  Stack<Character> stack7 = new Stack<>();
-  Stack<Character> stack8 = new Stack<>();
-  Stack<Character> stack9 = new Stack<>();
+  // Three commits exists for Day5, testing with different objects:
+  // List, Stack, and Deque
+  Deque<Character> stack1 = new LinkedList<>();
+  Deque<Character> stack2 = new LinkedList<>();
+  Deque<Character> stack3 = new LinkedList<>();
+  Deque<Character> stack4 = new LinkedList<>();
+  Deque<Character> stack5 = new LinkedList<>();
+  Deque<Character> stack6 = new LinkedList<>();
+  Deque<Character> stack7 = new LinkedList<>();
+  Deque<Character> stack8 = new LinkedList<>();
+  Deque<Character> stack9 = new LinkedList<>();
 
   private void initStacks() {
     initStack( 1, "HTZD" );
@@ -49,7 +52,7 @@ public class Day5Test {
       getStack( number ).add( c );
   }
 
-  private Stack<Character> getStack( int number ) {
+  private Deque<Character> getStack( int number ) {
     switch( number ) {
       case 1:
         return stack1;
@@ -93,7 +96,7 @@ public class Day5Test {
         from = Integer.parseInt( values[3] );
         to = Integer.parseInt( values[5] );
         for( int i = 0; i < move; i++ )
-          getStack( to ).push( getStack( from ).pop() );
+          getStack( to ).add( getStack( from ).removeLast() );
 
       }
 
@@ -101,7 +104,7 @@ public class Day5Test {
 
     String result = "";
     for( int i = 1; i <= 9; i++ )
-      result += getStack( i ).get( getStack( i ).size() - 1 );
+      result += getStack( i ).peekLast();
 
     CP.print( "Day5, part1, crates on top", Map.of( "Result", result ) );
 
@@ -125,8 +128,11 @@ public class Day5Test {
         move = Integer.parseInt( values[1] );
         from = Integer.parseInt( values[3] );
         to = Integer.parseInt( values[5] );
+
+        Deque<Character> tmpList = new LinkedList<>();
         for( int i = 0; i < move; i++ )
-          getStack( to ).push( getStack( from ).remove( getStack( from ).size() - ( move - i ) ) );
+          tmpList.push( getStack( from ).removeLast() );
+        getStack( to ).addAll( tmpList );
 
       }
 
@@ -134,7 +140,7 @@ public class Day5Test {
 
     String result = "";
     for( int i = 1; i <= 9; i++ )
-      result += getStack( i ).get( getStack( i ).size() - 1 );
+      result += getStack( i ).peekLast();
 
     CP.print( "Day5, part2, crates on top", Map.of( "Result", result ) );
 

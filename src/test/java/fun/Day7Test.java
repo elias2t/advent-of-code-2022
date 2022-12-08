@@ -54,7 +54,6 @@ public class Day7Test {
 
   }
 
-  @Test
   public LinkedHashMap<String, Dir> part1() throws IOException {
 
     int result = 0;

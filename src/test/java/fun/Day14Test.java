@@ -30,11 +30,11 @@ public class Day14Test {
   // Set<Point> filledSands = new HashSet<>();
   // Set<Point> filled = combination of both above;
 
-  Set<Point> filled = new HashSet<>();
+  private final Set<Point> filled = new HashSet<>();
 
-  int abyss = 0;
+  private int abyss = 0;
 
-  boolean reachedAbyss = false;
+  private boolean reachedAbyss = false;
 
   private Point sToPoint( String point ) {
     String[] coordinates = point.split( "," );
@@ -46,8 +46,7 @@ public class Day14Test {
     Stream<String> stream = FileUtils.fromResourcesAsStream( FILE );
     Iterator<String> it = stream.iterator();
     while( it.hasNext() ) {
-      String line = it.next();
-      String[] points = line.split( " -> " );
+      String[] points = it.next().split( " -> " );
       for( int i = 0; i < points.length - 1; i++ ) {
         Point point1 = sToPoint( points[i] );
         Point point2 = sToPoint( points[i + 1] );
@@ -121,7 +120,9 @@ public class Day14Test {
 
   @Test
   public void part2() throws IOException {
-    CP.print( "Day14, part2, reached abyss -2 as infinite and reached top", Map.of( "sand units", treat( true ) ) );
+    CP.print(
+        "Day14, part2, reached abyss -2 as infinite and reached top",
+        Map.of( "sand units", treat( true ) ) );
   }
 
 }

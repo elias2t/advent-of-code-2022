@@ -17,6 +17,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import fun.utils.CP;
 import fun.utils.FileUtils;
+import fun.utils.InputUtils;
 
 @ExtendWith( SpringExtension.class )
 @SpringBootTest( classes = Application.class )
@@ -36,11 +37,6 @@ public class Day14Test {
 
   private boolean reachedAbyss = false;
 
-  private Point sToPoint( String point ) {
-    String[] coordinates = point.split( "," );
-    return new Point( Integer.parseInt( coordinates[0] ), Integer.parseInt( coordinates[1] ) );
-  }
-
   private void readInput() throws IOException {
 
     Stream<String> stream = FileUtils.fromResourcesAsStream( FILE );
@@ -48,8 +44,8 @@ public class Day14Test {
     while( it.hasNext() ) {
       String[] points = it.next().split( " -> " );
       for( int i = 0; i < points.length - 1; i++ ) {
-        Point point1 = sToPoint( points[i] );
-        Point point2 = sToPoint( points[i + 1] );
+        Point point1 = InputUtils.sToPoint( points[i] );
+        Point point2 = InputUtils.sToPoint( points[i + 1] );
 
         if( point1.x == point2.x && point1.y != point2.y )
           for( int y = Math.min( point1.y, point2.y ); y <= Math.max( point1.y, point2.y ); y++ )

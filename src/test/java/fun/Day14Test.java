@@ -1,6 +1,6 @@
 package fun;
 
-import java.awt.*;
+import java.awt.Point;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Iterator;

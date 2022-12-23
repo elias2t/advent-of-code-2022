@@ -1,6 +1,6 @@
 package fun.utils;
 
-import java.awt.*;
+import java.awt.Point;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

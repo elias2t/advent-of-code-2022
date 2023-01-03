@@ -17,9 +17,9 @@ import fun.utils.FileUtils;
 @ExtendWith( SpringExtension.class )
 @SpringBootTest( classes = Application.class )
 @TestMethodOrder( MethodOrderer.MethodName.class )
-public class Day2Test {
+public class Day02Test {
 
-  private static final String FILE = "day2.txt";
+  private static final String FILE = "day02.txt";
 
   @Test
   public void part1() throws IOException {

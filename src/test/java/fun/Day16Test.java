@@ -69,8 +69,6 @@ public class Day16Test {
 
     private List<Valve> subs = new ArrayList<>();
 
-    private int minRoad = 0;
-
     public Valve( String[] valve, String[] tunnels ) {
       this.id = valve[0];
       this.rate = Integer.parseInt( valve[1] );

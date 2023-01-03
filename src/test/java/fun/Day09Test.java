@@ -23,9 +23,9 @@ import lombok.Getter;
 @ExtendWith( SpringExtension.class )
 @SpringBootTest( classes = Application.class )
 @TestMethodOrder( MethodOrderer.MethodName.class )
-public class Day9Test {
+public class Day09Test {
 
-  private static final String FILE = "day9.txt";
+  private static final String FILE = "day09.txt";
 
   @Getter
   private static class Line {

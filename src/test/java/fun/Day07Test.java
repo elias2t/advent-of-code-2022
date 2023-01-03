@@ -23,9 +23,9 @@ import lombok.Data;
 @ExtendWith( SpringExtension.class )
 @SpringBootTest( classes = Application.class )
 @TestMethodOrder( MethodOrderer.MethodName.class )
-public class Day7Test {
+public class Day07Test {
 
-  private static final String FILE = "day7.txt";
+  private static final String FILE = "day07.txt";
 
   @Data
   private static class Dir {

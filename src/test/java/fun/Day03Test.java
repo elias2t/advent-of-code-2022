@@ -20,9 +20,9 @@ import fun.utils.FileUtils;
 @ExtendWith( SpringExtension.class )
 @SpringBootTest( classes = Application.class )
 @TestMethodOrder( MethodOrderer.MethodName.class )
-public class Day3Test {
+public class Day03Test {
 
-  private static final String FILE = "day3.txt";
+  private static final String FILE = "day03.txt";
 
   private int getPower( char cr ) {
     if( Character.isLowerCase( cr ) )

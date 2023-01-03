@@ -19,9 +19,9 @@ import fun.utils.FileUtils;
 @ExtendWith( SpringExtension.class )
 @SpringBootTest( classes = Application.class )
 @TestMethodOrder( MethodOrderer.MethodName.class )
-public class Day5Test {
+public class Day05Test {
 
-  private static final String FILE = "day5.txt";
+  private static final String FILE = "day05.txt";
 
   // Three commits exists for Day5, testing with different objects:
   // List, Stack, and Deque

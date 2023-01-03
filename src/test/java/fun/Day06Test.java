@@ -21,9 +21,9 @@ import fun.utils.FileUtils;
 @ExtendWith( SpringExtension.class )
 @SpringBootTest( classes = Application.class )
 @TestMethodOrder( MethodOrderer.MethodName.class )
-public class Day6Test {
+public class Day06Test {
 
-  private static final String FILE = "day6.txt";
+  private static final String FILE = "day06.txt";
 
   private boolean areDifferent( char a, char b, char c, char d ) {
     return a != b && a != c && a != d && b != c && b != d && c != d;

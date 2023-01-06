@@ -333,7 +333,7 @@ public class Day17Test {
   }
 
   @Test
-  public void part2_2() throws IOException {
+  public void part2() throws IOException {
     readInput();
     CP.print(
         "Day17, part2, tower of rocks be after 1000000000000L rocks have fell",
